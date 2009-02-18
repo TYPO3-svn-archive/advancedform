@@ -19,6 +19,8 @@ Modifications that have been introduced until now are:
 *** radioWrap (stdWrap) now wraps the radion button and its label
 *** radioLabelWrap (stdWrap) new property for wrapping the label of a radio button
 *** "radio_id" new value available inside radioLabelWrap for using inside the "for" attribute of the <label> tag
+** allow the use of type-specific stdWrap configurations:
+*** e.g. for a submit button, SUBMIT.fieldWrap will be used if defined, else fieldWrap is used. Same for labelWrap
 
 - Additional libraries
 

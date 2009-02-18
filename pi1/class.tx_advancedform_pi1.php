@@ -465,8 +465,9 @@ class tx_advancedform_pi1 extends tslib_pibase {
 					}
 
 						// Getting template code:
-					$fieldCode = $this->cObj->stdWrap($fieldCode, $conf['fieldWrap.']);
-					$labelCode = $this->cObj->stdWrap($fieldLabel, $conf['labelWrap.']);
+					$fieldType = strtoupper($confData['type']);
+					$fieldCode = $this->cObj->stdWrap($fieldCode, (isset($conf[$fieldType.'.']['fieldWrap.'])) ? $conf[$fieldType.'.']['fieldWrap.'] : $conf['fieldWrap.']);
+					$labelCode = $this->cObj->stdWrap($fieldLabel, (isset($conf[$fieldType.'.']['labelWrap.'])) ? $conf[$fieldType.'.']['labelWrap.'] : $conf['labelWrap.']);
 					$commentCode = $this->cObj->stdWrap($confData['label'], $conf['commentWrap.']); // RTF
 					$result = $conf['layout'];
 					if ($conf['REQ'] && $confData['required'])	{
